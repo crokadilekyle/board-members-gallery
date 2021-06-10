@@ -90,7 +90,7 @@ add_action('init', 'twinwebdev_board_member_post_type');
 add_filter( 'enter_title_here', function( $title ) {
     $screen = get_current_screen();
 
-    if  ( 'twinwebdev_board_member' == $screen->post_type ) {
+    if  ( 'twd_board_member' == $screen->post_type ) {
         $title = 'Name of Board Member';
     }
 
