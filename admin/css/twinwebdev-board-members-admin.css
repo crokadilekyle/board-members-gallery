@@ -1,0 +1,14 @@
+.twinwebdev-board-members-instructions {
+    max-width: 500px;
+    background-color: #f7f7f7;
+    padding: 2rem 1rem;
+}
+
+.twinwebdev-board-members-instructions p {
+    font-size: 16px;
+}
+
+.twinwebdev-board-members-instructions code {
+    margin: 1rem 0;
+    display: inline-block;
+}
