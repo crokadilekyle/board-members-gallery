@@ -1,7 +1,7 @@
 <?php
 /*
     Plugin Name: Board Members Gallery
-    Description: Adds Board Members CPT and shortcode for creating an employee profile gallery.  Usage instructions can be found in "Tools" menu.
+    Description: Adds Board Members CPT and shortcode for creating an employee profile gallery.
     Version: 1.0.0
     Author: Kyle Merl
     Author URI: https://twinwebdev.com
