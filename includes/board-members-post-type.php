@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'WPINC' ) ) {
+    die;
+}
+
 // Add meta box and custom fields
 function twinwebdev_board_members_meta_box(WP_Post $post) {
     add_meta_box('twinwebdev_board_members_meta', 'Board Member Details', function() {

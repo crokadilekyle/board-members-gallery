@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'WPINC' ) ) {
+    die;
+}
+
 add_shortcode('board-members-gallery', 'twinwebdev_board_members_shortcode');
 function twinwebdev_board_members_shortcode( $atts = [], $content = null) {
     $gallery = '<div class="board-members-gallery">';

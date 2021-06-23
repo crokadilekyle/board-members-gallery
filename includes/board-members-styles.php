@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'WPINC' ) ) {
+    die;
+}
+
 // Load css on the frontend
 function twinwebdev_board_members_frontend_styles()
 {
@@ -8,7 +12,7 @@ function twinwebdev_board_members_frontend_styles()
         'twinwebdev-board-members-frontend',
         TWDBOARDMEMBERS_URL . 'frontend/css/twinwebdev-board-members-front-end.css',
         [],
-        time()
+        1.0
     );
 }
 add_action( 'wp_enqueue_scripts', 'twinwebdev_board_members_frontend_styles');
@@ -21,7 +25,7 @@ function twinwebdev_board_members_admin_styles()
         'twinwebdev-board-members-admin',
         TWDBOARDMEMBERS_URL . 'admin/css/twinwebdev-board-members-admin.css',
         [],
-        time()
+        1.0
     );
 }
 add_action( 'admin_enqueue_scripts', 'twinwebdev_board_members_admin_styles');

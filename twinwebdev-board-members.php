@@ -1,8 +1,8 @@
 <?php
 /*
-    Plugin Name: Board Members Gallery
+    Plugin Name: Twin Web Dev Board Members Gallery
     Description: Adds Board Members CPT and shortcode for creating an employee profile gallery.
-    Version: 1.0.0
+    Version: 1.0.1
     Author: Kyle Merl
     Author URI: https://twinwebdev.com
 
