@@ -1,0 +1,24 @@
+{
+  "name": "twinwebdev-board-members",
+  "version": "1.0.0",
+  "description": "This is a simple WordPress plugin designed to add a board member grid into a page.  It registers a custom post type of \"Board Member\" and creates a shortcode for adding a board member / employee profile grid to a page or post.",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crokadilekyle/board-members-gallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crokadilekyle/board-members-gallery/issues"
+  },
+  "homepage": "https://github.com/crokadilekyle/board-members-gallery#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^18.0.1"
+  }
+}
