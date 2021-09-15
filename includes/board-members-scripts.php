@@ -29,5 +29,9 @@ function twinwebdev_board_members_admin_scripts( $hook )
         1.0,
         true
     );
+
+    wp_localize_script(  'twinwebdev-board-members-admin-scripts', 'adminLocalizer', [
+        'apiUrl'    =>  home_url('/wp-json')
+    ]);
 }
 add_action('admin_enqueue_scripts', 'twinwebdev_board_members_admin_scripts');
