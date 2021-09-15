@@ -19,3 +19,4 @@ include( plugin_dir_path( __FILE__ )) . 'includes/board-members-scripts.php';
 include( plugin_dir_path( __FILE__ )) . 'includes/board-members-post-type.php';
 include( plugin_dir_path( __FILE__ )) . 'includes/board-members-short-code.php';
 include( plugin_dir_path( __FILE__ )) . 'includes/board-members-menu.php';
+include( plugin_dir_path( __FILE__ )) . 'includes/board-members-rest-routes.php';
