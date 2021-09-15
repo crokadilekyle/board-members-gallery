@@ -11,26 +11,15 @@ function twd_rest_routes() {
 }
 
 function get_members() {
-    $response = [];
+ 
+    global $wpdb;
 
-    $query_args = [
-        'post_type'     => 'twd_board_member',
-        'post_status'   => 'publish',
-        'order'         => 'asc'
-    ];
-
-    $board_members = new WP_Query($query_args);
-    if($board_members->have_posts()):
-        while($board_members->have_posts()) : $board_members->the_post();
-            $response['results'][] = [
-                'id'    => get_the_ID(),
-                'name'  => get_the_title()
-            ];            
-        endwhile;
-        wp_reset_postdata();
-    else :
-        $response['error'] = 'Sorry, no results were returned.';
-    endif;
+    $response = $wpdb->get_results(
+        "SELECT wp_posts.ID AS id, wp_posts.post_title AS name, wp_postmeta.meta_value AS role 
+        FROM wp_posts
+        LEFT OUTER JOIN wp_postmeta on wp_posts.ID = wp_postmeta.post_id 
+            AND wp_postmeta.meta_key = 'twd_board_member_role'
+        WHERE post_type = 'twd_board_member'");
 
     return rest_ensure_response($response);
 }
