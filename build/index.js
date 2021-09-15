@@ -17,9 +17,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Test() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "Board Members"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "twinwebdev-board-members-instructions"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Instructions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Go to the \"Board Members\" menu to add a new board member.  Enter a name and a role for each board member.  Set the featured image as the photo to be displayed for the member.  The photo should be 345px wide by 440px high."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "To add a Boad Members Gallery to a page or post, use this shortcode: "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("code", null, "[board-members-gallery]")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This will create a gallery using the Featured Image and title of all published Board Members.  The members will be displayed in the order they were created.")));
+  const [members, setMembers] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    fetch(`${adminLocalizer.apiUrl}/twdbmg/v1/members`).then(response => response.json()).then(data => {
+      setMembers(data.results);
+      setLoading(false);
+    });
+  }, [members]);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "twinwebdev-board-members-instructions"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "Board Members"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Current Board Members"), loading === false ? members.map(member => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    key: member.id
+  }, member.name)) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Loading")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Instructions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Go to the \"Board Members\" menu to add a new board member.  Enter a name and a role for each board member.  Set the featured image as the photo to be displayed for the member.  The photo should be 345px wide by 440px high."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "To add a Boad Members Gallery to a page or post, use this shortcode: "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("code", null, "[board-members-gallery]")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This will create a gallery using the Featured Image and title of all published Board Members.  The members will be displayed in the order they were created."));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Test);
